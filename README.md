@@ -13,7 +13,10 @@
     box-sizing:border-box;
     font-family:Arial, sans-serif;
 }
-
+html, body{
+    width:100%;
+    overflow-x:hidden;
+}
 body{
     background:#0f0f0f;
     color:white;
@@ -71,7 +74,9 @@ nav a:hover{
     background:rgba(0,0,0,0.7);
     padding:40px;
     border-radius:20px;
-    max-width:750px;
+    width:100%;
+    max-width:100%;
+}
 }
 
 .hero-content h1{
@@ -85,7 +90,7 @@ nav a:hover{
 }
 
 section{
-    padding:70px 10%;
+    padding:70px 5%;
 }
 
 .section-title{
