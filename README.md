@@ -425,7 +425,6 @@ Sí. Su sonido enorme y brillante hace destacar cualquier canción acústica.
 <button class="prev" onclick="moveSlide(-1)">❮</button>
 
 <div class="slides">
-
 <img class="slide active" src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200&auto=format&fit=crop">
 
 <img class="slide" src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?q=80&w=1200&auto=format&fit=crop">
@@ -433,6 +432,7 @@ Sí. Su sonido enorme y brillante hace destacar cualquier canción acústica.
 <img class="slide" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop">
 
 <img class="slide" src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1200&auto=format&fit=crop">
+
 
 </div>
 
