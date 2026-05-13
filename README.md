@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -168,6 +168,60 @@ section{
     margin-bottom:15px;
 }
 
+.slider{
+    position:relative;
+    max-width:900px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.slides{
+    position:relative;
+}
+
+.slide{
+    width:100%;
+    display:none;
+    height:500px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.slide.active{
+    display:block;
+}
+
+.prev,
+.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.6);
+    color:white;
+    border:none;
+    padding:15px 20px;
+    cursor:pointer;
+    font-size:28px;
+    border-radius:10px;
+    z-index:10;
+    transition:0.3s;
+}
+
+.prev:hover,
+.next:hover{
+    background:#ff9800;
+    color:black;
+}
+
+.prev{
+    left:15px;
+}
+
+.next{
+    right:15px;
+}
+
 footer{
     background:#000;
     text-align:center;
@@ -189,9 +243,8 @@ footer{
     font-size:32px;
 }
 
-nav{
-    flex-direction:column;
-    align-items:flex-start;
+.slide{
+    height:300px;
 }
 
 }
@@ -211,7 +264,7 @@ nav{
 <li><a href="#vendidas">Más famosas</a></li>
 <li><a href="#fabricacion">Fabricación</a></li>
 <li><a href="#aprender">Aprender</a></li>
-<li><a href="#datos">Curiosidades</a></li>
+<li><a href="#galeria">Galería</a></li>
 </ul>
 
 </nav>
@@ -225,7 +278,7 @@ nav{
 <h1>Docerolas</h1>
 
 <p>
-Descubre el universo de las guitarras de doce cuerdas:
+Explora el universo de las guitarras de doce cuerdas:
 su sonido brillante, su construcción y por qué son tan especiales.
 </p>
 
@@ -342,58 +395,48 @@ Se colocan las doce cuerdas y se calibra el instrumento para lograr un sonido eq
 <h2 class="section-title">📚 ¿Es difícil aprender docerola?</h2>
 
 <div class="info-box">
+
 <h3>Más desafiante que una guitarra normal 🎵</h3>
+
 <p>
 Las docerolas requieren más fuerza en los dedos debido a la tensión y cantidad de cuerdas.
 </p>
+
 </div>
 
 <div class="info-box">
+
 <h3>¿Vale la pena?</h3>
+
 <p>
-Sí. Su sonido tiene una textura enorme y brillante que hace destacar cualquier canción.
+Sí. Su sonido enorme y brillante hace destacar cualquier canción acústica.
 </p>
+
 </div>
 
 </section>
 
-<section id="datos">
+<section id="galeria">
 
-<h2 class="section-title">🌟 Curiosidades</h2>
+<h2 class="section-title">📸 Galería de Docerolas</h2>
 
-<div class="cards">
+<div class="slider">
 
-<div class="card">
+<button class="prev" onclick="moveSlide(-1)">❮</button>
 
-<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop">
+<div class="slides">
 
-<div class="card-content">
+<img class="slide active" src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200&auto=format&fit=crop">
 
-<h3>12 cuerdas, 6 pares</h3>
+<img class="slide" src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?q=80&w=1200&auto=format&fit=crop">
 
-<p>
-Las cuerdas trabajan en pares para crear un sonido más amplio y resonante.
-</p>
+<img class="slide" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop">
 
-</div>
+<img class="slide" src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1200&auto=format&fit=crop">
 
 </div>
 
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1200&auto=format&fit=crop">
-
-<div class="card-content">
-
-<h3>Sonido gigante</h3>
-
-<p>
-Las docerolas producen una sensación más llena que una guitarra tradicional.
-</p>
-
-</div>
-
-</div>
+<button class="next" onclick="moveSlide(1)">❯</button>
 
 </div>
 
@@ -406,6 +449,44 @@ Las docerolas producen una sensación más llena que una guitarra tradicional.
 </p>
 
 </footer>
+
+<script>
+
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index){
+
+slides.forEach(slide => {
+slide.classList.remove("active");
+});
+
+slides[index].classList.add("active");
+
+}
+
+function moveSlide(direction){
+
+currentSlide += direction;
+
+if(currentSlide >= slides.length){
+currentSlide = 0;
+}
+
+if(currentSlide < 0){
+currentSlide = slides.length - 1;
+}
+
+showSlide(currentSlide);
+
+}
+
+setInterval(() => {
+moveSlide(1);
+}, 4000);
+
+</script>
 
 </body>
 </html>
