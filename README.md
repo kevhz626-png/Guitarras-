@@ -1,4 +1,4 @@
-<!KORDOGUITARS html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -13,19 +13,18 @@
     box-sizing:border-box;
     font-family:Arial, sans-serif;
 }
+
 html, body{
     width:100%;
     overflow-x:hidden;
-}
-body{
     background:#0f0f0f;
     color:white;
-    line-height:1.7;
+    scroll-behavior:smooth;
 }
 
 header{
     background:#000;
-    padding:20px;
+    padding:18px;
     border-bottom:2px solid #ff9800;
     position:sticky;
     top:0;
@@ -36,18 +35,21 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    flex-wrap:wrap;
 }
 
 .logo{
     color:#ff9800;
-    font-size:32px;
+    font-size:30px;
     font-weight:bold;
 }
 
 nav ul{
     display:flex;
+    flex-wrap:wrap;
     list-style:none;
-    gap:20px;
+    gap:15px;
+    margin-top:10px;
 }
 
 nav a{
@@ -61,8 +63,9 @@ nav a:hover{
 }
 
 .hero{
-    height:90vh;
-    background:url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=1600&auto=format&fit=crop') center/cover;
+    width:100%;
+    min-height:100vh;
+    background:url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -71,12 +74,11 @@ nav a:hover{
 }
 
 .hero-content{
-    background:rgba(0,0,0,0.7);
-    padding:40px;
-    border-radius:20px;
     width:100%;
-    max-width:100%;
-}
+    max-width:900px;
+    background:rgba(0,0,0,0.65);
+    padding:40px 25px;
+    border-radius:20px;
 }
 
 .hero-content h1{
@@ -86,10 +88,12 @@ nav a:hover{
 }
 
 .hero-content p{
-    font-size:22px;
+    font-size:24px;
+    line-height:1.6;
 }
 
 section{
+    width:100%;
     padding:70px 5%;
 }
 
@@ -110,8 +114,8 @@ section{
     background:#1a1a1a;
     border-radius:20px;
     overflow:hidden;
-    transition:0.3s;
     border:1px solid #2f2f2f;
+    transition:0.3s;
 }
 
 .card:hover{
@@ -134,19 +138,6 @@ section{
     margin-bottom:10px;
 }
 
-.info-box{
-    background:#1a1a1a;
-    padding:30px;
-    border-radius:20px;
-    margin-bottom:30px;
-    border-left:5px solid #ff9800;
-}
-
-.info-box h3{
-    color:#ff9800;
-    margin-bottom:15px;
-}
-
 .timeline{
     display:grid;
     gap:25px;
@@ -164,6 +155,19 @@ section{
     margin-bottom:10px;
 }
 
+.info-box{
+    background:#1a1a1a;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:25px;
+    border-left:5px solid #ff9800;
+}
+
+.info-box h3{
+    color:#ff9800;
+    margin-bottom:15px;
+}
+
 footer{
     background:#000;
     text-align:center;
@@ -171,8 +175,25 @@ footer{
     border-top:2px solid #ff9800;
 }
 
-footer p{
-    color:#bbb;
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:42px;
+}
+
+.hero-content p{
+    font-size:20px;
+}
+
+.section-title{
+    font-size:32px;
+}
+
+nav{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
 }
 
 </style>
@@ -278,53 +299,38 @@ Una docerola famosa por su volumen potente y resonancia espectacular.
 <div class="timeline">
 
 <div class="step">
-
 <h4>1. Selección de madera</h4>
-
 <p>
 Las docerolas usan maderas resistentes para soportar la tensión extra de las 12 cuerdas.
 </p>
-
 </div>
 
 <div class="step">
-
 <h4>2. Construcción reforzada</h4>
-
 <p>
 El cuerpo y el mástil llevan refuerzos especiales para evitar deformaciones.
 </p>
-
 </div>
 
 <div class="step">
-
 <h4>3. Instalación del puente y clavijas</h4>
-
 <p>
 Se colocan doce clavijas y un puente preparado para soportar mayor presión.
 </p>
-
 </div>
 
 <div class="step">
-
 <h4>4. Acabado y pintura</h4>
-
 <p>
 La guitarra se pinta y barniza cuidadosamente para proteger la madera.
 </p>
-
 </div>
 
 <div class="step">
-
 <h4>5. Ajustes finales</h4>
-
 <p>
 Se colocan las doce cuerdas y se calibra el instrumento para lograr un sonido equilibrado.
 </p>
-
 </div>
 
 </div>
@@ -336,40 +342,24 @@ Se colocan las doce cuerdas y se calibra el instrumento para lograr un sonido eq
 <h2 class="section-title">📚 ¿Es difícil aprender docerola?</h2>
 
 <div class="info-box">
-
 <h3>Más desafiante que una guitarra normal 🎵</h3>
-
 <p>
 Las docerolas requieren más fuerza en los dedos debido a la tensión y cantidad de cuerdas.
 </p>
-
 </div>
 
 <div class="info-box">
-
-<h3>¿Qué cambia?</h3>
-
-<p>
-Los acordes suenan más llenos y brillantes, pero el mástil suele sentirse más ancho.
-</p>
-
-</div>
-
-<div class="info-box">
-
 <h3>¿Vale la pena?</h3>
-
 <p>
-Sí. Su sonido tiene una textura única que hace que cualquier canción se escuche enorme y envolvente.
+Sí. Su sonido tiene una textura enorme y brillante que hace destacar cualquier canción.
 </p>
-
 </div>
 
 </section>
 
 <section id="datos">
 
-<h2 class="section-title">🌟 Curiosidades sobre las docerolas</h2>
+<h2 class="section-title">🌟 Curiosidades</h2>
 
 <div class="cards">
 
@@ -382,23 +372,7 @@ Sí. Su sonido tiene una textura única que hace que cualquier canción se escuc
 <h3>12 cuerdas, 6 pares</h3>
 
 <p>
-Las cuerdas están agrupadas en pares para crear un efecto más brillante y amplio.
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=1200&auto=format&fit=crop">
-
-<div class="card-content">
-
-<h3>Sonido característico</h3>
-
-<p>
-El sonido de una docerola suele sentirse más grande y resonante que una guitarra común.
+Las cuerdas trabajan en pares para crear un sonido más amplio y resonante.
 </p>
 
 </div>
@@ -411,10 +385,10 @@ El sonido de una docerola suele sentirse más grande y resonante que una guitarr
 
 <div class="card-content">
 
-<h3>Muy usadas en baladas</h3>
+<h3>Sonido gigante</h3>
 
 <p>
-Muchas canciones acústicas famosas usan docerolas para dar profundidad al sonido.
+Las docerolas producen una sensación más llena que una guitarra tradicional.
 </p>
 
 </div>
